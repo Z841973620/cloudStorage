@@ -22,11 +22,13 @@
 
             echo '<table border="1" align="center" width="960px" cellspacing="0" cellpadding="0">';
             echo '<caption><h2>Contents in the directory ' . iconv('GBK', 'UTF-8', $dirName) . '</h2></caption>';
-            echo '<td><a href="backDir.php' . $file . '">back</a></td>';
             echo '<tr align="left" bgcolor="#cccccc">';
             echo '<th>No.</th><th>File Name</th><th>Size</th><th>Type</th><th>Modify Time</th></tr>';
-            while ($file = readdir($dir_handle)) {
-                if ($file != "." && $file != "..") {
+            echo '<tr bgcolor="#ffffff"></td><td><td><a href="backDir.php">..</a></td><td></td><td></td><td></td></tr></tr>';
+            while ($file = readdir($dir_handle))
+            {
+                if ($file != "." && $file != "..")
+                {
                     $dirFile = $dirName . "/" . $file;
                     if ($num++ % 2 == 0)
                        $bgcolor = "#ffffff";
