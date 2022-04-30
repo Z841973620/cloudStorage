@@ -1,5 +1,5 @@
 <?php
-    if(file_exists('config.php'))
+    if (file_exists('config.php'))
         header("Refresh:0;url=index.php");
     else
     {
