@@ -2,7 +2,6 @@
     include('config.php');
     if ($_COOKIE[encryptedUserName] == NULL)
         header("Refresh:0;url=login.html");
-
     mysql_select_db($dbName, $connect);
     $result = mysql_query("SELECT * FROM user WHERE `userNameSHA256` = '$_COOKIE[encryptedUserName]'");
     $userName = mysql_result($result, 0, 'userName');
@@ -17,13 +16,9 @@
 <body align="center">
 
     <div>
-        <br><p>Hello, <?php echo $userName; ?></p>
+        <br><p>Hello, <?php echo $userName; ?>.</p>
     </div>
     <div>
-        <?php
-            if($userName == 'root' || $userName == '841973620')
-                echo "<a href='admin.php'>Manage other users</a><br>";
-        ?>
         <a href="resetpswd.html">Reset Password</a><br>
         <a href="logout.php">Log Out</a>
     </div>
