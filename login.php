@@ -1,5 +1,4 @@
 <?php
-
     if ($_COOKIE[encryptedUserName] != NULL)
     {
         echo "You are already logged in.";
@@ -27,5 +26,4 @@
 
         setcookie('dirName', $_POST[userName]);
     }
-
 ?>
