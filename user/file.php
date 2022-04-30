@@ -52,7 +52,7 @@
             if ($num > 1)
                 echo "<p align='center'>There are $num subdirectories and files in this directory.</p>";
             else
-                echo "<p align='center'>There are $num subdirectory and file in this directory.</p>";
+                echo "<p align='center'>There is $num subdirectory and file in this directory.</p>";
         }
     }
     else
