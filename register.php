@@ -1,5 +1,5 @@
 <?php
-	    if (!preg_match("/^[a-zA-Z ]*$/", $_POST[userName]))
+    if (!preg_match("/^[a-zA-Z ]*$/", $_POST[userName]))
     {
 	echo "Illegal user name.";
         header("Refresh:2;url=register.html");
