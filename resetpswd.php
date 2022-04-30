@@ -1,24 +1,22 @@
 <?php
-
     include('config.php');
-
     mysql_select_db($dbName, $connect);
 
-	$encryptedUserName = $_COOKIE[encryptedUserName];
+    $encryptedUserName = $_COOKIE[encryptedUserName];
     $result = mysql_query("SELECT * FROM user WHERE `userNameSHA256` = '$encryptedUserName'");
     $userName = mysql_result($result, 0, 'userName');
 
-	if ($userName == "Guest" || $userName == "guest")
-	{
-		echo "The password cannot be changed for this account!";
-		header("Refresh:2;url=user.php");
-	}
+    if ($userName == "Guest" || $userName == "guest")
+    {
+        echo "The password cannot be changed for this account!";
+        header("Refresh:2;url=user.php");
+    }
     else if ($_POST[newPswd] == NULL || $_POST[confirmPswd] == NULL)
     {
         echo "Password cannot be empty.";
-		header("Refresh:2;url=resetpswd.html");
+        header("Refresh:2;url=resetpswd.html");
     }
-	else if($_POST[newPswd] != $_POST[confirmPswd])
+    else if($_POST[newPswd] != $_POST[confirmPswd])
         echo "The passwords entered are inconsistent.";
     else
     {
@@ -38,5 +36,4 @@
 
         mysql_close($connect);
     }
-
 ?>
