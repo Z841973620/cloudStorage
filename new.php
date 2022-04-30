@@ -14,6 +14,7 @@
             die('Error: ' . mysql_error());
         else
         {
+            mkdir(iconv("UTF-8", "GBK", "user/Guest"), true);
             $file = fopen("config.php", "w") or die("Unable to open file!");
             $txt = "<?php\n    \$dbServerName = \"$_POST[dbServerName]\";\n    \$dbUserName = \"$_POST[dbUserName]\";\n    \$dbPassword = \"$_POST[dbPassword]\";\n    \$dbName = \"$_POST[dbName]\";\n    \$connect = mysql_connect(\$dbServerName, \$dbUserName, \$dbPassword, \$dbName);\n    if (!\$connect)\n        die('Could not connect: ' . mysql_error());\n?>\n";
             fwrite($file, $txt);
