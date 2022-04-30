@@ -14,6 +14,7 @@
     else
     {
         include('config.php');
+
         $userNameSHA256 = hash("sha256", $_POST[userName]);
         mysql_select_db($dbName, $connect);
         $sql = mysql_query("INSERT INTO user (userName, userNameSHA256, pswd, op) VALUES ('$_POST[userName]', '$userNameSHA256', '$_POST[pswd]', '2')");
