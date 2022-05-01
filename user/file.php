@@ -21,7 +21,7 @@
             $dir_handle = opendir($dirName);
 
             echo '<table border="1" align="center" width="960px" cellspacing="0" cellpadding="0">';
-            echo '<caption><h2>Contents in the directory ' . iconv('GBK', 'UTF-8', $dirName) . '</h2></caption>';
+            echo '<caption><h2>Contents in the directory "' . iconv('GBK', 'UTF-8', $dirName) . '"</h2></caption>';
             echo '<tr align="left" bgcolor="#cccccc">';
             echo '<th>No.</th><th>File Name</th><th>Size</th><th>Type</th><th>Modify Time</th></tr>';
             echo '<tr bgcolor="#ffffff"></td><td><td><a href="backDir.php">..</a></td><td></td><td></td><td></td></tr></tr>';
