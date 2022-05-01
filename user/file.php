@@ -31,9 +31,9 @@
                 {
                     $dirFile = $dirName . "/" . $file;
                     if ($num++ % 2 == 0)
-                       $bgcolor = "#ffffff";
-                    else
                        $bgcolor = "#cccccc";
+                    else
+                       $bgcolor = "#ffffff";
                     echo '<tr bgcolor=' . $bgcolor . '>';
                     echo '<td>' . $num . '</td>';
                     $file = iconv('GBK', 'UTF-8', $file);
