@@ -9,7 +9,7 @@
         mysql_select_db($dbName, $connect);
         mysql_query("CREATE SCHEMA `storage`");
         mysql_query("CREATE TABLE `storage`.`user` ( `userName` VARCHAR(16) NOT NULL, `userNameSHA256` VARCHAR(256) NOT NULL, `pswd` VARCHAR(32) NULL, PRIMARY KEY (`userName`), UNIQUE INDEX `userNamw_UNIQUE` (`userName` ASC), UNIQUE INDEX `userNameSHA256_UNIQUE` (`userNameSHA256` ASC))");
-        $sql = mysql_query("INSERT INTO `storage`.`new_table` (`userName`, `userNameSHA256`) VALUES ('Guest', '5ed8944a85a9763fd315852f448cb7de36c5e928e13b3be427f98f7dc455f141')");
+        $sql = mysql_query("INSERT INTO `storage`.`user` (`userName`, `userNameSHA256`) VALUES ('Guest', '5ed8944a85a9763fd315852f448cb7de36c5e928e13b3be427f98f7dc455f141')");
         if ($sql != 1)
             die('Error: ' . mysql_error());
         else
