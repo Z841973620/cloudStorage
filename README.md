@@ -10,7 +10,7 @@
 
 - Windows
 - IIS
-- PHP 5.6 或更高版本
+- PHP 5.6
 - MySQL 5.7 或更高版本
 
 ## 使用方式
