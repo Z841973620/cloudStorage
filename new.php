@@ -16,7 +16,7 @@
         {
             mkdir(iconv("UTF-8", "GBK", "user/Guest"), true);
             $file = fopen("config.php", "w") or die("Unable to open file!");
-            $txt = "<?php\n    \$dbServerName = \"$_POST[dbServerName]\";\n    \$dbUserName = \"$_POST[dbUserName]\";\n    \$dbPassword = \"$_POST[dbPassword]\";\n    \$dbName = \"$_POST[dbName]\";\n    \$notAllowedExts = array(\"php\", \"html\", \"js\", \"css\", \"htm\");\n    \$connect = mysql_connect(\$dbServerName, \$dbUserName, \$dbPassword, \$dbName);\n    if (!\$connect)\n        die('Could not connect: ' . mysql_error());\n?>\n";
+            $txt = "<?php\n    \$dbServerName = \"$_POST[dbServerName]\";\n    \$dbUserName = \"$_POST[dbUserName]\";\n    \$dbPassword = \"$_POST[dbPassword]\";\n    \$dbName = "storage";\n    \$notAllowedExts = array(\"php\", \"html\", \"js\", \"css\", \"htm\");\n    \$connect = mysql_connect(\$dbServerName, \$dbUserName, \$dbPassword, \$dbName);\n    if (!\$connect)\n        die('Could not connect: ' . mysql_error());\n?>\n";
             fwrite($file, $txt);
             fclose($file);
             unlink('new.html');
