@@ -42,13 +42,9 @@
                     echo '<td>' . $num . '</td>';
                     $file = iconv('GBK', 'UTF-8', $file);
                     if (filetype($dirFile) == 'dir')
-                        echo '<td><a href="newDirName.php?newdir=' . $file . '">' . $file . '</a></td>';
+                        echo '<td><a href="newDirName.php?newdir=' . $file . '">' . $file . '</a></td><td></td>';
                     else
-                        echo '<td><a href="' . iconv('GBK', 'UTF-8', $dirName) . '/' . $file . '" target="_blank">' . $file . '</a></td>';
-                    if (filesize($dirFile) == 0)
-                        echo '<td></td>';
-                    else
-                        echo '<td>' . sprintf("%.3f", filesize($dirFile) / 1024) . 'KB</td>';
+                        echo '<td><a href="' . iconv('GBK', 'UTF-8', $dirName) . '/' . $file . '" target="_blank">' . $file . '</a></td><td>' . getFormatedSize(getSize($dirFile)) . '</td>';
                     echo '<td>' . filetype($dirFile) . '</td>';
                     echo '<td>' . date("Y/n/t", filemtime($dirFile)) . '</td>';
                     echo '</tr>';
@@ -56,19 +52,10 @@
             }
             echo '</table>';
             closedir($dir_handle);
-            $dirSize = dirsize($dirName);
-            if ( $dirSize>= 1073741824)
-                $totalSize = '' . sprintf("%.3f", $dirSize / 1073741824) . 'GB';
-            else if ($dirSize >=1048576)
-                $totalSize = '' . sprintf("%.3f", $dirSize / 1048576) . 'MB';
-            else if ($dirSize >=1024)
-                $totalSize = '' . sprintf("%.3f", $dirSize / 1024) . 'KB';
-            else
-                $totalSize = '' . $dirSize . 'B';
             if ($num > 1)
-                echo "<p align='center'>There are $num subdirectories and files in this directory, $totalSize in total.</p>";
+                echo '<p align=\'center\'>There are ' . $num . ' subdirectories and files in this directory, ' . getFormatedSize(dirsize($dirName)) . ' in total.</p>';
             else
-                echo "<p align='center'>There are $num subdirectory and file in this directory, $totalSize in total.</p>";
+                echo '<p align=\'center\'>There is ' . $num . ' subdirectory and file in this directory, ' . getFormatedSize(dirsize($dirName)) . ' in total.</p>';
         }
     }
     else
