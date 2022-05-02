@@ -24,6 +24,8 @@
 
 请修改`php.ini`中的`upload_max_filesize`项，最好不少于4G
 
+请向`php.ini`中的`[ExtensionList]`添加`extension=php_com_dotnet.dll`
+
 用户权限目前仍需手动进数据库修改
 
 Linux端部署注意：需修改 `register.php`、`user/newFolder.php` 新建文件夹部分的代码
