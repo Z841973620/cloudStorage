@@ -13,7 +13,7 @@
 ## 前置条件
 
 - Windows (Linux也可以
-- IIS
+- IIS (Nginx或者Apache当然可以
 - PHP 5.6
 - MySQL 5.7 或更高版本
 
