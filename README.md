@@ -12,7 +12,7 @@
 
 ## 前置条件
 
-- Windows
+- Windows (Linux也可以
 - IIS
 - PHP 5.6
 - MySQL 5.7 或更高版本
